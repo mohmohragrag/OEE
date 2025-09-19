@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>حاسب OEE — كفاءة المعدات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>حاسب OEE — الكفاءة الكلية للمعدة</h1>
+    <p class="lead">ادخل قيمك أدناه (بالدقائق أو بالوحدات) والصفحة تحسب لك التوافر، الأداء، الجودة، وOEE.</p>
+
+    <div class="grid">
+      <div>
+        <label>الوقت المخطط للإنتاج (دقائق)</label>
+        <input id="plannedTime" type="number" min="0" step="any" placeholder="مثال: 480" />
+        <div class="example">مثال: وردية 8 ساعات = 480 دقيقة</div>
+      </div>
+
+      <div>
+        <label>إجمالي وقت التوقف (Downtime) (دقائق)</label>
+        <input id="downtime" type="number" min="0" step="any" placeholder="مثال: 30" />
+        <div class="example">أعطال، إعداد، تنظيف...</div>
+      </div>
+
+      <div>
+        <label>الزمن المثالي للوحدة (ثواني)</label>
+        <input id="idealCycle" type="number" min="0" step="any" placeholder="مثال: 20" />
+        <div class="example">الزمن إذا الماكينة اشتغلت بأقصى سرعة (مثال: 20 ثانية لكل قطعة)</div>
+      </div>
+
+      <div>
+        <label>إجمالي الوحدات المنتجة (مجموع القطع)</label>
+        <input id="produced" type="number" min="0" step="1" placeholder="مثال: 1200" />
+      </div>
+
+      <div>
+        <label>عدد الوحدات الجيدة (Passed)</label>
+        <input id="good" type="number" min="0" step="1" placeholder="مثال: 1150" />
+      </div>
+
+      <div class="full">
+        <label>وحدة الزمن للزمن المثالي</label>
+        <select id="timeUnit">
+          <option value="sec">ثانية</option>
+          <option value="min">دقيقة</option>
+          <option value="hour">ساعة</option>
+        </select>
+        <div class="example">اختر وحدة الزمن للزمن المثالي (عادة بالثواني)</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="calc" id="calcBtn">احسب OEE</button>
+      <button class="reset" id="resetBtn">إعادة تعيين</button>
+    </div>
+
+    <div id="resultBox" class="result" style="display:none" aria-live="polite">
+      <div class="row"><div>التوافر (Availability)</div><div id="avail" class="val">-</div></div>
+      <div class="row"><div>الأداء (Performance)</div><div id="perf" class="val">-</div></div>
+      <div class="row"><div>الجودة (Quality)</div><div id="qual" class="val">-</div></div>
+      <div class="row"><div>OEE (نسبة)</div><div id="oee" class="val">-</div></div>
+
+      <div class="note" id="interpretation"></div>
+    </div>
+
+    <footer>لو عايز أضيف تصدير CSV أو سجل حفظ النتائج قولي وأنا أضيفه.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
