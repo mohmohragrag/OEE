@@ -1,0 +1,28 @@
+:root{font-family: "Segoe UI", Tahoma, Arial, sans-serif}
+body{direction: rtl;margin:0;background:#f5f7fb;color:#1a1a1a}
+.container{max-width:880px;margin:28px auto;padding:22px;background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(20,30,60,0.06)}
+h1{margin:0 0 16px;font-size:22px}
+p.lead{margin:0 0 18px;color:#555}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:13px;margin-bottom:6px;color:#333}
+input[type="number"], input[type="text"], select{
+  width:100%;padding:10px 12px;border:1px solid #d6dbe6;border-radius:8px;font-size:15px;
+  box-sizing:border-box;
+}
+.full{grid-column:1 / -1}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+button{padding:10px 14px;border:0;border-radius:9px;font-size:15px;cursor:pointer}
+button.calc{background:#0b6ef6;color:#fff}
+button.reset{background:#eef2ff;color:#0b3ea8}
+.result{margin-top:18px;padding:16px;border-radius:10px;background:#fbfdff;border:1px solid #eef3ff}
+.row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(0,0,0,0.04)}
+.row:last-child{border-bottom:0}
+.val{font-weight:700}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:13px}
+.good{background:#e6f9ec;color:#0b7a3b}
+.warn{background:#fff4e6;color:#a45a00}
+.bad{background:#fff1f1;color:#a10b0b}
+.note{margin-top:12px;color:#444;font-size:14px}
+footer{margin-top:18px;color:#777;font-size:13px;text-align:center}
+.example{font-size:13px;color:#666;margin-top:8px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
